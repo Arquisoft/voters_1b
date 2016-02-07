@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+
+<title>Insert title here</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+
+<h1>Result</h1>
+    <p th:text="'Email: ' + ${greeting.login}" />
+    <p th:text="'Pass: ' + ${greeting.pass}" />
+    <a href="/">Submit another message</a>
+    
+<body>
+
+</body>
+</html>

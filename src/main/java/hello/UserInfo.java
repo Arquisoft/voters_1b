@@ -7,20 +7,24 @@ public class UserInfo {
 	
 	private static final Logger log = LoggerFactory.getLogger(UserInfo.class);
 
-    private final String name;
-    private final Integer age;
+    private String login;
+    private String pass;
 
-    public UserInfo(String name, Integer age) {
-    	log.info("Creating user " + name + ". age: " + age);
-        this.name = name;
-        this.age = age;
+    public UserInfo(){
+    	
+    }
+    
+    public UserInfo(String email, String pass) {
+    	log.info("Creating user " + email + ". pass: " + pass);
+        this.login= email;
+        this.pass = pass;
     }
 
-    public String getName() {
-        return name;
+    public String getLogin() {
+        return login;
     }
 
-    public Integer getAge() {
-        return age;
+    public String getPass() {
+        return pass;
     }
 }
