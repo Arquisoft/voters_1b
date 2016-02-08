@@ -1,11 +1,7 @@
-/*C14*/SET SCHEMA PUBLIC
-DROP SCHEMA PUBLIC CASCADE
-CREATE TABLE users (name varchar(25) not null, nif varchar(8) not null , email varchar(25) not null, password varchar(25) not null, pollingstationcode integer not null, PRIMARY KEY (email))
-ALTER TABLE PUBLIC.USERS ALTER COLUMN NIF VARCHAR(25) 
-SET SCHEMA PUBLIC
-INSERT INTO USERS VALUES('Pablo','55555555','pablo@gmail.com','pablo',5060)
+/*C1*/SET SCHEMA SYSTEM_LOBS
+INSERT INTO BLOCKS VALUES(0,2147483647,0)
 COMMIT
-INSERT INTO USERS VALUES('Ju\u00e1n','55555566','juan@gmail.com','juan',5060)
-COMMIT
-INSERT INTO USERS VALUES('Pedro','20202121','pedro@gmail.com','pedro',5000)
-COMMIT
+/*C4*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C5*/SET SCHEMA PUBLIC
+DISCONNECT

@@ -5,6 +5,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+
+import jdbc.Jdbc;
+
+import java.sql.Connection;
+import java.sql.SQLException;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
@@ -29,7 +35,8 @@ public class MainController {
     
     @RequestMapping(value="/", method=RequestMethod.POST)
     public String greetingSubmit(@ModelAttribute UserInfo greeting, Model model) {
-        model.addAttribute("greeting", greeting);
+  
+    	model.addAttribute("greeting", greeting);
         return "result";
     }
 
