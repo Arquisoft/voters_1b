@@ -9,15 +9,21 @@ public class UserInfo {
 
     private String login;
     private String pass;
+    private String name;
+    private String nif;
+    private Integer pollingStationCode;
 
     public UserInfo(){
     	
     }
     
-    public UserInfo(String email, String pass) {
+    public UserInfo(String email, String pass, String name, String nif, Integer pollingStationCode) {
     	log.info("Creating user " + email + ". pass: " + pass);
         this.login= email;
         this.pass = pass;
+        this.name=name;
+        this.nif=nif;
+        this.pollingStationCode=pollingStationCode;
     }
 
     public String getLogin() {
@@ -26,5 +32,9 @@ public class UserInfo {
 
     public String getPass() {
         return pass;
+    }
+    
+    public void changePassword(String pass){
+    	this.pass=pass;
     }
 }
