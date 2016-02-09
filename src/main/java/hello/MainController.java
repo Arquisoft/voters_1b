@@ -4,13 +4,6 @@ package hello;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
-
-import bd.DBManager;
-
-import java.sql.Connection;
-import java.sql.SQLException;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 
@@ -18,13 +11,6 @@ import org.springframework.ui.Model;
 public class MainController {
 	
 	UserInfo user;
-
-    @RequestMapping("/user")
-    public UserInfo user() {
-    	user=new UserInfo("pepe@gmail.com","0000", "pepe", "50505050Y", 2535);
-        return user;
-    }
-
  
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String greetingForm(Model model) {

@@ -34,7 +34,23 @@ public class UserInfo {
         return pass;
     }
     
-    public void changePassword(String pass){
+    public static Logger getLog() {
+		return log;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public String getNif() {
+		return nif;
+	}
+
+	public Integer getPollingStationCode() {
+		return pollingStationCode;
+	}
+
+	public void changePassword(String pass){
     	this.pass=pass;
     }
 }
