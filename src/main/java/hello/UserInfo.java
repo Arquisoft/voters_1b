@@ -1,12 +1,21 @@
 package hello;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+@Entity
 public class UserInfo {
 	
 	private static final Logger log = LoggerFactory.getLogger(UserInfo.class);
 
+	@Id
+    @GeneratedValue(strategy=GenerationType.AUTO)
+    private long id;
     private String login;
     private String pass;
     private String name;
@@ -53,4 +62,12 @@ public class UserInfo {
 	public void changePassword(String pass){
     	this.pass=pass;
     }
+
+	@Override
+	public String toString() {
+		return "UserInfo [login=" + login + ", pass=" + pass + ", name=" + name + ", nif=" + nif
+				+ ", pollingStationCode=" + pollingStationCode + "]";
+	}
+	
+	
 }
