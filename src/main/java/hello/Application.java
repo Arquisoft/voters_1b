@@ -2,7 +2,7 @@ package hello;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -17,7 +17,8 @@ public class Application {
     	SpringApplication.run(Application.class, args);
     }
     
-    @Bean
+  
+	@Bean
 	public CommandLineRunner demo(DBManager repository) {
 		return (args) -> {
 			// save a couple of customers
@@ -40,6 +41,7 @@ public class Application {
 			log.info("Customers found with findByEmail(\"juan@gmail.com\"):");
 			log.info("-------------------------------");
 			log.info(repository.findByLogin("juan@gmail.com").toString());
+			
 		};
     }
     
