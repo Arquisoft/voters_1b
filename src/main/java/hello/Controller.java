@@ -39,14 +39,14 @@ public class Controller {
         			return car;
         			
         		}else{
-        			return null;
+        	        throw new HTTP404Exception();  
         		}
         	}
         	}catch(IndexOutOfBoundsException e){
-        		
+                throw new HTTP404Exception();  
         	}
         	
         }
-        throw new HTTPException(404);  
+        throw new HTTP404Exception();  
     }	
 }
