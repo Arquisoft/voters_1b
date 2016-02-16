@@ -1,6 +1,9 @@
 package hello;
 
 import java.util.List;
+
+import javax.xml.ws.http.HTTPException;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -44,7 +47,6 @@ public class Controller {
         	}
         	
         }
-        return null;
-       
+        throw new HTTPException(404);  
     }	
 }
