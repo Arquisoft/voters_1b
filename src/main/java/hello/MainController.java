@@ -40,7 +40,7 @@ public class MainController {
         	
         	if (users!=null){
         		UserInfo usuario=users.get(0);
-        		if(usuario.getPass().equals(greeting.getPass())){
+        		if(usuario.getPassword().equals(greeting.getPassword())){
         			sesion.setAttribute("login", greeting.getLogin());
         			return "result";
         			

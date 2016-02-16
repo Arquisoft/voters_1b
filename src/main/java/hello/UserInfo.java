@@ -17,7 +17,7 @@ public class UserInfo {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private long id;
     private String login;
-    private String pass;
+    private String password;
     private String name;
     private String nif;
     private Integer pollingStationCode;
@@ -29,7 +29,7 @@ public class UserInfo {
     public UserInfo(String email, String pass, String name, String nif, Integer pollingStationCode) {
     	log.info("Creating user " + email + ". pass: " + pass);
         this.login= email;
-        this.pass = pass;
+        this.password = pass;
         this.name=name;
         this.nif=nif;
         this.pollingStationCode=pollingStationCode;
@@ -39,8 +39,8 @@ public class UserInfo {
         return login;
     }
 
-    public String getPass() {
-        return pass;
+    public String getPassword() {
+        return password;
     }
     
     public static Logger getLog() {
@@ -60,12 +60,12 @@ public class UserInfo {
 	}
 
 	public void changePassword(String pass){
-    	this.pass=pass;
+    	this.password=pass;
     }
 
 	@Override
 	public String toString() {
-		return "UserInfo [login=" + login + ", pass=" + pass + ", name=" + name + ", nif=" + nif
+		return "UserInfo [login=" + login + ", pass=" + password + ", name=" + name + ", nif=" + nif
 				+ ", pollingStationCode=" + pollingStationCode + "]";
 	}
 
@@ -73,8 +73,8 @@ public class UserInfo {
 		this.login = login;
 	}
 
-	public void setPass(String pass) {
-		this.pass = pass;
+	public void setPassword(String pass) {
+		this.password = pass;
 	}
 
 	@Override

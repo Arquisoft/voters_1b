@@ -32,7 +32,7 @@ public class Controller {
         	
         	if (users!=null){
         		UserInfo usuario=users.get(0);
-        		if(usuario.getPass().equals(car.getPass())){
+        		if(usuario.getPassword().equals(car.getPassword())){
         			pollingStationCode=usuario.getPollingStationCode();
         			car=usuario;
         			System.out.print(pollingStationCode);
