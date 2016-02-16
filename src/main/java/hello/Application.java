@@ -26,21 +26,7 @@ public class Application {
 			repository.save(new UserInfo("juan@gmail.com","000", "Juan", "24252627X", 2535));
 			repository.save(new UserInfo("maria@gmail.com","000", "María", "24252627Y", 2500));
 			repository.save(new UserInfo("aida@gmail.com","000", "Aida", "24252627Z", 2500));
-			
-			// fetch all customers
-			log.info("\n");
-			log.info("Customers found with findAll():");
-			log.info("-------------------------------");
-			for (UserInfo customer : repository.findAll()) {
-				log.info(customer.toString());
-			}
-						
-			// Busqueda por email
-			log.info("\n");
-			log.info("Customers found with findByEmail(\"juan@gmail.com\"):");
-			log.info("-------------------------------");
-			log.info(repository.findByLogin("juan@gmail.com").toString());
-			
+					
 		};
     }
     
