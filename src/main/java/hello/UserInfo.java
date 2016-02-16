@@ -84,7 +84,7 @@ public class UserInfo {
 		result = prime * result + ((login == null) ? 0 : login.hashCode());
 		result = prime * result + ((name == null) ? 0 : name.hashCode());
 		result = prime * result + ((nif == null) ? 0 : nif.hashCode());
-		result = prime * result + ((pass == null) ? 0 : pass.hashCode());
+		result = prime * result + ((password == null) ? 0 : password.hashCode());
 		result = prime * result + ((pollingStationCode == null) ? 0 : pollingStationCode.hashCode());
 		return result;
 	}
@@ -113,10 +113,10 @@ public class UserInfo {
 				return false;
 		} else if (!nif.equals(other.nif))
 			return false;
-		if (pass == null) {
-			if (other.pass != null)
+		if (password == null) {
+			if (other.password != null)
 				return false;
-		} else if (!pass.equals(other.pass))
+		} else if (!password.equals(other.password))
 			return false;
 		if (pollingStationCode == null) {
 			if (other.pollingStationCode != null)
