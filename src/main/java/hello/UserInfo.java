@@ -68,6 +68,14 @@ public class UserInfo {
 		return "UserInfo [login=" + login + ", pass=" + pass + ", name=" + name + ", nif=" + nif
 				+ ", pollingStationCode=" + pollingStationCode + "]";
 	}
+
+	public void setLogin(String login) {
+		this.login = login;
+	}
+
+	public void setPass(String pass) {
+		this.pass = pass;
+	}
 	
 	
 }
