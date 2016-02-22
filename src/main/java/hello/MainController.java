@@ -70,8 +70,23 @@ public class MainController {
     	else {
     		
     		String login = (String)sesion.getAttribute("login");
-    		br.addError(new FieldError("cambiarClave", "claveAnterior", "Clave anterior mal"));
-    		System.out.println(login + " " + cambiarClave.getClaveAnterior() + " " + cambiarClave.getClaveNueva() + " " + cambiarClave.getConfirmacionClave());
+    		
+    		List<UserInfo> users = repository.findByLogin(login);
+    		
+    		if (users.isEmpty()) {
+    			throw new RuntimeException();
+    		}
+    		else {
+    			UserInfo userInfo = users.get(0);
+    			if (userInfo.getPassword().equals(cambiarClave.getClaveAnterior())) {
+        			userInfo.changePassword(cambiarClave.getClaveNueva());
+        			repository.save(userInfo);
+    			}
+    			else {
+    	    		br.addError(new FieldError("cambiarClave", "claveAnterior", "Clave anterior mal"));
+    			}
+    		}
+    		
 	    	return "redirect:/";
     	}
     }
