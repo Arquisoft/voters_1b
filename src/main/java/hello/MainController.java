@@ -38,12 +38,16 @@ public class MainController {
     	model.addAttribute("userinfo", greeting);
     	
     	try{
+    		//busco el usuario por el login
     		List<UserInfo> users=repository.findByLogin(greeting.getLogin());
         	
         	if (users!=null){
+        		//si el usuario existe
         		UserInfo usuario=users.get(0);
         		if(usuario.getPassword().equals(greeting.getPassword())){
+        			//si el usuario y la contraseña coinciden
         			sesion.setAttribute("login", greeting.getLogin());
+        			model.addAttribute("userinfo", usuario);
         			return "result";
         			
         		}else{

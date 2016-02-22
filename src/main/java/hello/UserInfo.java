@@ -63,6 +63,10 @@ public class UserInfo {
     	this.password=pass;
     }
 
+	public void setPollingStationCode(Integer pollingStationCode) {
+		this.pollingStationCode = pollingStationCode;
+	}
+
 	@Override
 	public String toString() {
 		return "UserInfo [login=" + login + ", pass=" + password + ", name=" + name + ", nif=" + nif
