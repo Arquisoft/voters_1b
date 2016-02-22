@@ -22,6 +22,7 @@ public class MainController {
 	UserInfo user;
 	@Autowired
     DBManager repository;
+	
  
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String greetingForm(Model model) {
@@ -30,6 +31,7 @@ public class MainController {
         return "greeting";
     }
     
+   
     @RequestMapping(value="/", method=RequestMethod.POST)
     public String greetingSubmit(@ModelAttribute UserInfo greeting, Model model, HttpSession sesion) {
   
