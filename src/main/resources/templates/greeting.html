@@ -11,7 +11,7 @@
 
     <form action="#" th:action="@{/}" th:object="${userinfo}" method="post">
     	<p>Email: <input type="text" th:field="*{login}" /></p>
-        <p>Contraseña: <input type="text" th:field="*{password}" /></p>
+        <p>Contraseña: <input type="password" th:field="*{password}" /></p>
         <p><input type="submit" value="Entrar" /> <input type="reset" value="Reset" /></p>
     </form>
 

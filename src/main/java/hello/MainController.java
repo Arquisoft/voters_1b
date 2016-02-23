@@ -21,48 +21,28 @@ public class MainController {
 	
 	UserInfo user;
 	@Autowired
-    DBManager repository;
-	
+    DBManager repository;	
 	GetVoterInfo infoPort;
-	
- 
+	 
     @RequestMapping(value="/", method=RequestMethod.GET)
     public String greetingForm(Model model) {
-    	//user=new UserInfo("bla","000", "bla", "24252627W", 2535);
         model.addAttribute("userinfo", new UserInfo());
         return "greeting";
     }
-    
-   
+       
     @RequestMapping(value="/", method=RequestMethod.POST)
     public String greetingSubmit(@ModelAttribute UserInfo greeting, Model model, HttpSession sesion) {
   
     	model.addAttribute("userinfo", greeting);
     	infoPort= new VoterAccess(repository);
     	try{
-    		//busco el usuario por el login
-    		//List<UserInfo> users=repository.findByLogin(greeting.getLogin());
-        	
-        	//if (users!=null){
-        		//si el usuario existe
-        	//	UserInfo usuario=users.get(0);
-        	//	if(usuario.getPassword().equals(greeting.getPassword())){
-        			//si el usuario y la contraseña coinciden
-    		
     				UserInfo usuario=infoPort.getInfo(greeting.getLogin(),greeting.getPassword() );
         			sesion.setAttribute("login", greeting.getLogin());
         			model.addAttribute("userinfo", usuario);
         			return "result";
-        			
-        		//}else{
-        	       // throw new HTTP404Exception();  
-        		//}
-        	//}
         	}catch(IndexOutOfBoundsException e){
                 throw new HTTP404Exception();  
         	}
-    	
-       // return "result";
     }
     
     @RequestMapping(value="/cambiar-clave", method=RequestMethod.GET)
@@ -95,8 +75,7 @@ public class MainController {
     			else {
     	    		br.addError(new FieldError("cambiarClave", "claveAnterior", "Clave anterior mal"));
     			}
-    		}
-    		
+    		}    		
 	    	return "redirect:/";
     	}
     }
