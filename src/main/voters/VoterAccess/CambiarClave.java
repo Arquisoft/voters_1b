@@ -1,4 +1,4 @@
-package hello;
+package VoterAccess;
 
 import javax.validation.constraints.AssertTrue;
 
